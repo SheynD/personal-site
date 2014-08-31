@@ -1,0 +1,143 @@
+<!--Sheyn Denizov and Francesco Grossi/-->
+
+<html>
+	<head>
+		<link href = 'http://fonts.googleapis.com/css?family=Raleway:700,400' rel = 'stylesheet' type = 'text/css'>
+	<title>Rock, Paper, Scissors, Shoot!</title>
+	<body background="CSEpic2.jpg">
+		<style>
+			h1 {
+				font-family: "Raleway", sans-serif;
+			}
+
+			p {
+				font-family: "Raleway", sans-serif;
+			}
+
+			select {
+				font-family: "Raleway", sans-serif;
+			}
+
+			option {
+				font-family: "Raleway", sans-serif;
+			}
+
+			input {
+				font-family: "Raleway", sans-serif;
+			}
+		</style>
+	<script type = 'text/javascript'>
+		var numWins = 0;
+		var numLosses = 0;
+		var numTies = 0;
+		var choice;
+		var computerChoice;
+		var randomNumber = Math.floor(3 * Math.random());
+
+		function f() {
+			choice = document.getElementById("user").value;
+			if(document.getElementById("user").value == "rock") {
+				choice = "Rock";
+			}
+			else if(document.getElementById("user").value == "paper") {
+				choice = "Paper";
+			}
+			else if(document.getElementById("user").value == "scissors") {
+				choice = "Scissors";
+			}
+			document.getElementById("userchoice").value = choice;
+		}
+
+		function f2() {
+			var randomNumber = Math.floor(3 * Math.random());
+			if(randomNumber == 0) {
+				computerChoice = "Rock";
+			}
+			else if(randomNumber == 1) {
+				computerChoice = "Paper";
+			}
+			else if(randomNumber == 2) {
+				computerChoice = "Scissors";
+			}
+			return computerChoice;
+		}
+
+		function show2() {
+			document.getElementById("computerchoice").value = f2();
+		}
+
+		function f3() {
+			if(choice == "Rock" && computerChoice == "Rock") {
+				numTies++;
+			}
+			if(choice == "Rock" && computerChoice == "Paper") {
+				numLosses++;
+			}
+			if(choice == "Rock" && computerChoice == "Scissors") {
+				numWins++;
+			}
+			if(choice == "Paper" && computerChoice == "Rock") {
+				numWins++;
+			}
+			if(choice == "Paper" && computerChoice == "Paper") {
+				numTies++;
+			}
+			if(choice == "Paper" && computerChoice == "Scissors") {
+				numLosses++;
+			}
+			if(choice == "Scissors" && computerChoice == "Rock") {
+				numLosses++;
+			}
+			if(choice == "Scissors" && computerChoice == "Paper") {
+				numWins++;
+			}
+			if(choice == "Scissors" && computerChoice == "Scissors") {
+				numTies++;
+			}
+			return numWins, numLosses, numTies;
+		}
+
+		function show3() {
+			document.getElementById("timeswon").value = numWins;
+			document.getElementById("timeslost").value = numLosses;
+			document.getElementById("timestied").value = numTies;
+		}
+
+		function reset() {
+			document.getElementById("userchoice").value = " ";
+			document.getElementById("computerchoice").value = " ";
+			document.getElementById("timeswon").value = " ";
+			document.getElementById("timeslost").value = " ";
+			document.getElementById("timestied").value = " ";
+			document.getElementById("user").value = "rock";
+		}
+
+		function deleteEntries() {
+			numWins = 0;
+			numTies = 0;
+			numLosses = 0;
+		}
+	</script>
+	<h1 align = "center"><font color = "white">Choose your Weapon! NOW!</font></h1>
+	<select id = "user" value = "user">
+		<option value = "rock">Rock</option>
+		<option value = "paper">Paper</option>
+		<option value = "scissors">Scissors</option>
+	</select>
+	<p>
+	<input type = "button" value = "Shoot" onclick = 'f(); show2(); f3(); show3();'>
+	<input type = "button" value = "Reset" onclick = 'reset(); deleteEntries();'>
+	</p>
+	<font color = "white">You chose:
+	<p><input size = "10" type = "text" id = "userchoice"></p>
+	<p><font color = "white">Computer chose:
+	<p><input size = "10" type = "text" id = "computerchoice"></p>
+	<p>You won <input size = "5" type = "text" id = "timeswon"> times!</p>
+	<p>You lost <input size = "5" type = "text" id = "timeslost"> times!</p>
+	<p>You tied <input size = "5" type = "text" id = "timestied"> times!</p>
+	</font>
+	<footer>
+		<h5><p> CSE 001 Sheyn Denizov Productions 2012</p></h5>
+	</footer></font>
+	</body>
+</html>

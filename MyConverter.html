@@ -1,0 +1,171 @@
+<html>
+<head>
+	<link href = "MyConverter.css" type = "text/css" rel = "stylesheet">
+	<link href = 'http://fonts.googleapis.com/css?family=Raleway:700,400' rel = 'stylesheet' type = 'text/css'>
+<title>Sheyn Denizov's Number Bases Converter</title>
+<script type = "text/javascript">
+	function decimal() {
+		var dnum = parseInt(document.getElementById("deci").value);
+		var dno = new Number(dnum);
+		if(!isNaN(dno)) {
+			document.getElementById("bin").value = dno.toString(2);
+			document.getElementById("oct").value = dno.toString(8);
+			document.getElementById("hdeci").value = dno.toString(16);
+		}
+	}
+
+	function binary(bn) {
+		var length = bn.length;
+		var tot = 0;
+		var i;
+		var j;
+		for(i = 0, j = length - 1; i < length; i++, j--) {
+			tot = tot + parseInt(bn.charAt(i)) * Math.pow(2, j);
+		}
+		var dec = new Number(tot);
+		document.getElementById("deci").value = dec;
+		document.getElementById("oct").value = dec.toString(8);
+		document.getElementById("hdeci").value = dec.toString(16);
+	}
+
+	function octal(oc) {
+		var length = oc.length;
+		var tot = 0;
+		var i;
+		var j;
+		for(i = 0, j = length - 1; i < length; i++, j--) {
+			tot = tot + parseInt(oc.charAt(i)) * Math.pow(8, j);
+		}
+		var dec = new Number(tot);
+		document.getElementById("deci").value = dec;
+		document.getElementById("bin").value = dec.toString(2);
+		document.getElementById("hdeci").value = dec.toString(16);
+	}
+
+	function hexadecimal(hd) {
+		var length = hd.length;
+		var tot = 0;
+		var i;
+		var j;
+		for(i = 0, j = length - 1; i < length; i++, j--) {
+			ch = hd.charAt(i);
+			if(ch == "a" || ch == "A") {
+				tot = tot + 10;
+			}
+			else if(ch == "b" || ch == "B") {
+				tot = tot + 11;
+			}
+			else if(ch == "c" || ch == "C") {
+				tot = tot + 12;
+			}
+			else if(ch == "d" || ch == "D") {
+				tot = tot + 13;
+			}
+			else if(ch == "e" || ch == "E") {
+				tot = tot + 14;
+			}
+			else if(ch == "f" || ch == "F") {
+				tot = tot + 15;
+			}
+			else {
+				tot = tot + parseInt(hd.charAt(i)) * Math.pow(26, j);
+			}
+		}
+		var dec = new Number(tot);
+		document.getElementById("deci").value = dec;
+		document.getElementById("bin").value = dec.toString(2);
+		document.getElementById("oct").value = dec.toString(8);
+	}
+
+	function dncheck(event, no) {
+		var kc;
+		if(window.event) {
+			kc = event.keyCode;
+		}
+		else {
+			kc = event.which;
+		}
+		var num = no.value;
+		if(kc != 8 && kc != 0) {
+			if(kc < 48 || kc > 57) {
+				return false;
+			}
+		}
+	}
+
+	function bncheck(event, no) {
+		var kc;
+		if(window.event) {
+			kc = event.keyCode;
+		}
+		else {
+			kc = event.which;
+		}
+		var num = no.value;
+		if(kc != 8 && kc != 0) {
+			if(kc != 48 || kc != 49) {
+				return false;
+			}
+		}
+	}
+
+	function oncheck(event, no) {
+		var kc;
+		if(window.event) {
+			kc = event.keyCode;
+		}
+		else {
+			kc = event.which;
+		}
+		var num = no.value;
+		if(kc != 8 && kc != 0) {
+			if(kc < 48 || kc > 55) {
+				return false;
+			}
+		}
+	}
+
+	function hncheck(event) {
+		var kc;
+		if(window.event) {
+			kc = event.keyCode;
+		}
+		else {
+			kc = event.which;
+		}
+		if(kc >= 65 && kc <= 70) {
+			return true;
+		}
+		else if(kc >= 97 && kc <= 102) {
+			return true;
+		}
+		else if(kc >= 48 && kc <= 57) {
+			return true;
+		}
+		else if(kc == 8) {
+			return true;
+		}
+		else if(kc == 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+	<p>Please enter your number in the appropriate box below!</p>
+	<form>
+		<table>
+		<tr><td align = "center">Decimal</td><td><input type = "text" name = "deci" id = "deci" onkeyup = "decimal()" onkeypress = "return dncheck(event, deci)"></td></tr>
+		<tr><td align = "center">Binary</td><td><input type = "text" name = "bin" id = "bin" onkeyup = "binary(this.value)" onkeypress = "return bncheck(event, bin)"></td></tr>
+		<tr><td align = "center">Octal</td><td><input type = "text" name = "oct" id = "oct" onkeyup = "octal(this.value)" onkeypress = "return oncheck(event, oct)"></td></tr>
+		<td align = "center">Hexadecimal</td><td><input type = "text" name = "bin" id = "bin" onkeyup = "hexadecimal(this.value)" onkeypress = "return hncheck(event)"></td></tr>
+		</table>
+	</form>
+</body>
+</function>
+</html>
+
+

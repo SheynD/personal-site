@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href = 'http://fonts.googleapis.com/css?family=Raleway:700,400' rel = 'stylesheet' type = 'text/css'>
+	<title>My Area</title>
+	<meta name = "viewport" content = "initial-scale=1.0, user-scalable=no">
+	<meta charset = "utf-8">
+	<style>
+		h1 {
+			font-family: "Raleway", sans-serif;
+		}
+
+		html, body, #map-canvas {
+			margin-left: 20px;
+			margin-right: 20px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			padding: 0;
+			height: 95%;
+		}
+
+		a {
+			text-decoration: none;
+			font-family: "Raleway", sans-serif;
+			color: #000000;
+		}
+
+		#map-canvas {
+			border: solid blue;
+		}
+
+		#Northampton_County_z161 {
+			font-family: "Raleway", sans-serif;
+		}
+
+		#foot {
+			color: blue;
+			font-family: "Raleway", sans-serif;
+		}
+
+		body {
+			background-image: -moz-linear-gradient(top left, #FFFDF7 0%, #69EF6E 100%); /* Firefox */
+			background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FFFDF7), color-stop(1, #69EF6E)); /* Safari and Chrome */
+		}
+
+		#time_is_link {
+			font-family: "Raleway", sans-serif;
+		}
+		</style>
+		<script src = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+		<script>
+			var map;
+			function initialize() {
+				var mapOptions = {
+					zoom: 10,
+					center: new google.maps.LatLng(40.840040, -75.294156),
+					mapTypeId: google.maps.MapTypeId.HYBRID
+				};
+
+				map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+			}
+
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+	</head>
+	<body>
+		<h1 align = "center">The Area In Which I Live</h1>
+		<div id = "map-canvas"></div>
+		<p><form action = "http://maps.google.com/maps" method = "get" target = "_blank">
+		<a href = "http://time.is/Northampton_County" id = "time_is_link" style = "font-size:23px">Time in Wind Gap, PA:</a>
+		<span id = "Northampton_County_z161" style = "font-size:23px"></span>
+		<script src = "http://widget.time.is/t.js"></script>
+		<script>
+		time_is_widget.init({Northampton_County_z161: { time_format: " 12hours:minutes:seconds AMPM"}});
+		</script>
+			<p id = "foot" align = "center">
+			<strong>&copy; Sheyn Denizov CSB Class of 2016</strong>
+			</p>
+	</body>
+</html>

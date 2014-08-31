@@ -1,0 +1,22 @@
+p {
+	font-family: 'Raleway', sans-serif;
+	color: blue;
+	font-size: 18px;
+}
+
+td {
+	font-family: 'Raleway', sans-serif;
+	color: blue;
+	font-size: 18px;
+}
+
+body {
+	background-image: -moz-linear-gradient(top left, #FFFDF7 0%, #69EF6E 100%); /* Firefox */
+	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FFFDF7), color-stop(1, #69EF6E)); /* Safari and Chrome */
+}
+
+table {
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
