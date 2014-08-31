@@ -1,4 +1,5 @@
 a {
+<<<<<<< HEAD
 	text-decoration: none;
 }
 
@@ -23,12 +24,39 @@ p {
 	font-family: 'Raleway', sans-serif;
 	color: blue;
 	font-size: 18px;
+=======
+  text-decoration: none;
+}
+
+div {
+    height: 70px;
+    width: 120px;
+    border: 4px solid #6495ED;
+    background-color: aquamarine;
+    text-align: center;
+    font-family: cursive;
+    border-radius: 10px;
+    margin: auto;
+}
+
+div:hover {
+	  height: 70px;
+    width: 120px;
+    box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+}
+
+p {
+  font-family: cursive;
+  color: blue;
+  font-size: 18px;
+>>>>>>> 4cfabda2323d0ecab232329ead1bc10958d97ac4
 }
 
 p:hover {
 	color: turquoise;
 }
 
+<<<<<<< HEAD
 .me {
 	height: 400px;
 	width: 500px;
@@ -77,6 +105,58 @@ p a {
 p a:hover {
 	color: white;
 	box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+=======
+
+img {
+    height: 400px;
+    width: 500px;
+    border: 2px solid blue;
+    margin-left: 255px;
+}
+
+img:hover {
+	  opacity: 0.8;
+}
+
+span {
+     font-family: cursive;
+     text-decoration: none;
+}
+
+.glow {
+      color: #006400;
+      font-weight: 600;
+      font-family: 'Raleway', sans-serif;
+      margin-left: 350px;
+      width: 300px;
+      box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+      border-radius: 15px;
+}
+
+div a:hover {
+    color: white;
+}
+
+p a {
+  margin-left: 300px;
+}
+	
+.rock {
+      display: inline-block;
+      margin-left: 190px;
+      margin-right: 15px;
+}
+
+.tic {
+     display: inline-block;
+     margin-right: 15px;
+}
+
+
+p a:hover {
+  color: white;
+  box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+>>>>>>> 4cfabda2323d0ecab232329ead1bc10958d97ac4
 }
 
 .myform {
@@ -88,6 +168,7 @@ p a:hover {
 }
 
 body {
+<<<<<<< HEAD
 	background-image: -moz-linear-gradient(top left, #FFFDF7 0%, #69EF6E 100%); /* Firefox */
 	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FFFDF7), color-stop(1, #69EF6E)); /* Safari and Chrome */
 }
@@ -141,6 +222,34 @@ body {
 .area {
 	display: inline-block;
 	margin-right: 170px;
+=======
+     background-image: -moz-linear-gradient(top left, #FFFDF7 0%, #69EF6E 100%); /* Firefox */
+     background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FFFDF7), color-stop(1, #69EF6E)); /* Safari and Chrome */
+}
+
+.facebook {
+	  display: inline-block;
+	  margin-left: 320px;
+	  margin-right: 17px;
+}
+	
+.linkedin {
+	  display: inline-block;
+	  margin-right: 17px;
+}
+
+.twitter {
+	 display: inline-block;
+}
+
+.twitter-share-button:hover {
+			    box-shadow: 0px 0px 15px 3px rgba(255, 255, 190, .75);
+}
+
+.area {
+      display: inline-block;
+      margin-right: 170px;
+>>>>>>> 4cfabda2323d0ecab232329ead1bc10958d97ac4
 }
 
 .resume {
