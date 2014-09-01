@@ -1,5 +1,4 @@
 a {
-<<<<<<< HEAD
 	text-decoration: none;
 }
 
@@ -24,7 +23,6 @@ p {
 	font-family: 'Raleway', sans-serif;
 	color: blue;
 	font-size: 18px;
-=======
   text-decoration: none;
 }
 
@@ -249,7 +247,6 @@ body {
 .area {
       display: inline-block;
       margin-right: 170px;
->>>>>>> 4cfabda2323d0ecab232329ead1bc10958d97ac4
 }
 
 .resume {
