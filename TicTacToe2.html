@@ -1,0 +1,289 @@
+<!--Sheyn Denizov/-->
+<html>
+<head>
+	<link href = 'http://fonts.googleapis.com/css?family=Raleway:700,400' rel = 'stylesheet' type = 'text/css'>
+<title>Tic, Tac, Toe: The Game of Machine Dominance</title>
+<body>
+<style>
+	body {
+		background-image: -moz-linear-gradient(top left, #FFFDF7 0%, #69EF6E 100%); /* Firefox */
+		background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FFFDF7), color-stop(1, #69EF6E)); /* Safari and Chrome */
+	}
+
+	p {
+		font-family: 'Raleway', cursive;
+	}
+
+	#button1, #button2, #button3, #button4, #button5, #button5, #button6, #button7, #button8, #button9 {
+		font-family: 'Raleway', cursive;
+	}
+
+	#reset {
+		font-family: 'Raleway', cursive;
+	}
+
+	#machine {
+		font-family: 'Raleway', cursive;
+	}
+
+	#players {
+		font-family: 'Raleway', cursive;
+	}
+
+	#playerwins {
+		background: transparent;
+		font-family: 'Raleway', cursive;
+		border: 0px;
+	}
+
+	#otherplayerwins {
+		background: transparent;
+		font-family: 'Raleway', cursive;
+		border: 0px;
+	}
+
+	#tie {
+		background: transparent;
+		font-family: 'Raleway', cursive;
+		border: 0px;
+	}
+
+	h3 {
+		font-family: 'Raleway', cursive;
+	}
+</style>
+<script type = 'text/javascript'>
+		var count = 0;
+		var check = 0;
+		var x = true;
+
+		function playmachine() {
+			if(check == 0) {
+				var machinemove;
+				while(count == 1) {
+					if(document.getElementById("button1").value == "X" && document.getElementById("button2").value == " ") {
+						document.getElementById("button2").value = "O";
+						count++;
+					}
+					if(document.getElementById("button2").value == "X" && document.getElementById("button3").value == " ") {
+						document.getElementById("button3").value = "O";
+						count++;
+					}
+					if(document.getElementById("button3").value == "X" && document.getElementById("button6").value == " ") {
+						document.getElementById("button6").value = "O";
+						count++;
+					}
+					if(document.getElementById("button4").value == "X" && document.getElementById("button5").value == " ") {
+						document.getElementById("button5").value = "O";
+						count++;
+					}
+					if(document.getElementById("button5").value == "X" && document.getElementById("button8").value == " ") {
+						document.getElementById("button8").value = "O";
+						count++;
+					}
+					if(document.getElementById("button6").value == "X" && document.getElementById("button9").value == " ") {
+						document.getElementById("button9").value = "O";
+						count++;
+					}
+					if(document.getElementById("button7").value == "X" && document.getElementById("button4").value == " ") {
+						document.getElementById("button4").value = "O";
+						count++;
+					}
+					if(document.getElementById("button8").value == "X" && document.getElementById("button5").value == " ") {
+						document.getElementById("button5").value = "O";
+						count++;
+					}
+					if(document.getElementById("button9").value == "X" && document.getElementById("button6").value == " ") {
+						document.getElementById("button6").value = "O";
+						count++;
+					}
+				}
+			}
+		}
+
+		function cickboard(x) {
+			if(count % 2 == 0 && document.getElementById(x).value == " ") {
+				document.getElementById(x).value = "X";
+				count++;
+			}
+			else if(count % 2 == 1 && document.getElementById(x).value == " ") {
+				document.getElementById(x).value = "O";
+				count++;
+			}
+			winner();
+		}
+
+		function reset() {
+			document.getElementById("button1").value = " ";
+			document.getElementById("button2").value = " ";
+			document.getElementById("button3").value = " ";
+			document.getElementById("button4").value = " ";
+			document.getElementById("button5").value = " ";
+			document.getElementById("button6").value = " ";
+			document.getElementById("button7").value = " ";
+			document.getElementById("button8").value = " ";
+			document.getElementById("button9").value = " ";
+			document.getElementById("playerwins").value = " ";
+			document.getElementById("otherplayerwins").value = " ";
+			document.getElementById("tie").value = " ";
+			count = 0;
+			x = true;
+		}
+
+		function winner() {
+			var draw = 0;
+			if(document.getElementById("button1").value == "X" && document.getElementById("button2").value == "X" && document.getElementById("button3").value == "X") {
+				document.getElementById("playerwins").value = "Yes, player one won!";
+				draw = 1;
+				x = false;
+			}
+			if(document.getElementById("button1").value == "X" && document.getElementById("button5").value == "X" && document.getElementById("button9").value == "X") {
+				document.getElementById("playerwins").value = "Yes, player one won!";
+				draw = 1;
+				x = false;
+			}
+			if(document.getElementById("button1").value == "X" && document.getElementById("button4").value == "X" && document.getElementById("button7").value == "X") {
+				document.getElementById("playerwins").value = "Yes, player one won!";
+				draw = 1;
+				x = false;
+			}
+			if(document.getElementById("button3").value == "X" && document.getElementById("button5").value == "X" && document.getElementById("button7").value == "X") {
+				document.getElementById("playerwins").value = "Yes, player one won!";
+				draw = 1;
+				x = false;
+			}
+			if(document.getElementById("button3").value == "X" && document.getElementById("button6").value == "X" && document.getElementById("button9").value == "X") {
+				document.getElementById("playerwins").value = "Yes, player one won!";
+				draw = 1;
+				x = false;
+			}
+			if(document.getElementById("button2").value == "X" && document.getElementById("button5").value == "X" && document.getElementById("button8").value == "X") {
+				document.getElementById("playerwins").value = "Yes, player one won!";
+				draw = 1;
+				x = false;
+			}
+			if(document.getElementById("button4").value == "X" && document.getElementById("button5").value == "X" && document.getElementById("button6").value == "X") {
+				document.getElementById("playerwins").value = "Yes, player one won!";
+				draw = 1;
+				x = false;
+			}
+			if(document.getElementById("button7").value == "X" && document.getElementById("button8").value == "X" && document.getElementById("button9").value == "X") {
+				document.getElementById("playerwins").value = "Yes, player one won!";
+				draw = 1;
+				x = false;
+			}
+			if(document.getElementById("button1").value == "O" && document.getElementById("button2").value == "O" && document.getElementById("button3").value == "O") {
+				document.getElementById("otherplayerwins").value = "Yes, the other guy won!";
+				draw = 1;
+				x = false;
+			}
+			if(document.getElementById("button1").value == "O" && document.getElementById("button5").value == "O" && document.getElementById("button9").value == "O") {
+				document.getElementById("otherplayerwins").value = "Yes, the other guy won!";
+				draw = 1;
+				x = false;
+			}
+			if(document.getElementById("button1").value == "O" && document.getElementById("button4").value == "O" && document.getElementById("button7").value == "O") {
+				document.getElementById("otherplayerwins").value = "Yes, the other guy won!";
+				draw = 1;
+				x = false;
+			}
+			if(document.getElementById("button3").value == "O" && document.getElementById("button5").value == "O" && document.getElementById("button7").value == "O") {
+				document.getElementById("otherplayerwins").value = "Yes, the other guy won!";
+				draw = 1;
+				x = false;
+			}
+			if(document.getElementById("button3").value == "O" && document.getElementById("button6").value == "O" && document.getElementById("button9").value == "O") {
+				document.getElementById("otherplayerwins").value = "Yes, the other guy won!";
+				draw = 1;
+				x = false;
+			}
+			if(document.getElementById("button2").value == "O" && document.getElementById("button5").value == "O" && document.getElementById("button8").value == "O") {
+				document.getElementById("otherplayerwins").value = "Yes, the other guy won!";
+				draw = 1;
+				x = false;
+			}
+			if(document.getElementById("button4").value == "O" && document.getElementById("button5").value == "O" && document.getElementById("button6").value == "O") {
+				document.getElementById("otherplayerwins").value = "Yes, the other guy won!";
+				draw = 1;
+				x = false;
+			}
+			if(document.getElementById("button7").value == "O" && document.getElementById("button8").value == "O" && document.getElementById("button9").value == "O") {
+				document.getElementById("otherplayerwins").value = "Yes, the other guy won!";
+				draw = 1;
+				x = false;
+			}
+			if(draw != 1 && (document.getElementById("button1").value == "X" || document.getElementById("button1").value == "O") && (document.getElementById("button2").value == "X" || document.getElementById("button2").value == "O") && (document.getElementById("button3").value == "X" || document.getElementById("button3").value == "O") && (document.getElementById("button4").value == "X" || document.getElementById("button4").value == "O") && (document.getElementById("button5").value == "X" || document.getElementById("button5").value == "O") && (document.getElementById("button6").value == "X" || document.getElementById("button6").value == "O") && (document.getElementById("button7").value == "X" || document.getElementById("button7").value == "O") && (document.getElementById("button8").value == "X" || document.getElementById("button8").value == "O") && (document.getElementById("button9").value == "X" || document.getElementById("button9").value == "O")) {
+				document.getElementById("tie").value = "It is a tie!";
+			}
+		}
+
+		function playuser() {
+			check = 1;
+		}
+
+		function computerplay() {
+			check = 0;
+		}
+</script>
+<h1 align = "center">
+<style = "text/css">
+	h1 {
+		font-family: 'Raleway', cursive;
+	}
+	input {
+		font-family: Garamond;
+	}
+</style>
+New and Improved: Play the Computer!</h1>
+<table border = 9 cellspacing = 30 align = "center" cellpadding = 30 bgcolor = "white">
+	<tr>
+		<td bgcolor = "red"><input type = "button" id = "button1" value = " " onclick = 'clickboard(id); if(count != 9 && x) {
+		playmachine();
+		}'></td>
+		<td bgcolor = "red"><input type = "button" id = "button2" value = " " onclick = 'clickboard(id); if(count != 9 && x) {
+		playmachine();
+		}'></td>
+		<td bgcolor = "red"><input type = "button" id = "button3" value = " " onclick = 'clickboard(id); if(count != 9 && x) {
+		playmachine();
+		}'></td>
+	</tr>
+	<tr>
+		<td bgcolor = "green"><input type = "button" id = "button4" value = " " onclick = 'clickboard(id); if(count != 9 && x) {
+		playmachine();
+		}'></td>
+		<td bgcolor = "green"><input type = "button" id = "button5" value = " " onclick = 'clickboard(id); if(count != 9 && x) {
+		playmachine();
+		}'></td>
+		<td bgcolor = "green"><input type = "button" id = "button6" value = " " onclick = 'clickboard(id); if(count != 9 && x) {
+		playmachine();
+		}'></td>
+	</tr>
+	<tr>
+		<td bgcolor = "blue"><input type = "button" id = "button7" value = " " onclick = 'clickboard(id); if(count != 9 && x) {
+		playmachine();
+		}'></td>
+		<td bgcolor = "blue"><input type = "button" id = "button8" value = " " onclick = 'clickboard(id); if(count != 9 && x) {
+		playmachine();
+		}'></td>
+		<td bgcolor = "blue"><input type = "button" id = "button9" value = " " onclick = 'clickboard(id); if(count != 9 && x) {
+		playmachine();
+		}'></td>
+	</tr>
+</table>
+<p></p>
+<p align = "center">
+<input type = "button" id = "reset" value = "Reset Game" onclick = 'reset()'>
+<input type = "button" id = "reset" value = "Play Machine" onclick = 'computerplay()'>
+<input type = "button" id = "reset" value = "Play User" onclick = 'playuser()'></p>
+<p></p>
+<p>Player wins?</p>
+<p><input type = "text" id = "playerwins"></p>
+<p>Computer/Other player wins?</p>
+<p><input type = "text" id = "otherplayerwins"></p>
+<p>Tie?</p>
+<p><input type = "text" id = "tie"></p>
+</body>
+<footer>
+	<p><h3 align = "center"><font color = "blue">&copy; Sheyn Denizov CSB Class of 2016</font></h3></p>
+</footer>
+</html>
