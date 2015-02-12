@@ -38,7 +38,7 @@ div {
 }
 
 div:hover {
-	  height: 70px;
+	height: 70px;
     width: 120px;
     box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
 }
@@ -47,14 +47,12 @@ p {
   font-family: cursive;
   color: blue;
   font-size: 18px;
->>>>>>> 4cfabda2323d0ecab232329ead1bc10958d97ac4
 }
 
 p:hover {
 	color: turquoise;
 }
 
-<<<<<<< HEAD
 .me {
 	height: 400px;
 	width: 500px;
@@ -103,7 +101,7 @@ p a {
 p a:hover {
 	color: white;
 	box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
-=======
+}
 
 img {
     height: 400px;
@@ -154,7 +152,6 @@ p a {
 p a:hover {
   color: white;
   box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
->>>>>>> 4cfabda2323d0ecab232329ead1bc10958d97ac4
 }
 
 .myform {
@@ -166,7 +163,6 @@ p a:hover {
 }
 
 body {
-<<<<<<< HEAD
 	background-image: -moz-linear-gradient(top left, #FFFDF7 0%, #69EF6E 100%); /* Firefox */
 	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FFFDF7), color-stop(1, #69EF6E)); /* Safari and Chrome */
 }
@@ -220,7 +216,6 @@ body {
 .area {
 	display: inline-block;
 	margin-right: 170px;
-=======
      background-image: -moz-linear-gradient(top left, #FFFDF7 0%, #69EF6E 100%); /* Firefox */
      background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FFFDF7), color-stop(1, #69EF6E)); /* Safari and Chrome */
 }
@@ -241,7 +236,7 @@ body {
 }
 
 .twitter-share-button:hover {
-			    box-shadow: 0px 0px 15px 3px rgba(255, 255, 190, .75);
+	box-shadow: 0px 0px 15px 3px rgba(255, 255, 190, .75);
 }
 
 .area {
